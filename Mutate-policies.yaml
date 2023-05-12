@@ -1,0 +1,26 @@
+#JSON Patch (RFC 6902)
+mutate:
+  patches:
+  - path: " /spec/template/spec/initContainers/0/"
+    op: add
+    value:
+      - image: "nirmata.io/kube-vault-client:v2"
+        name:"init-secrets"
+
+
+#StrategicMergePatch
+#if-then-else
+mutate:
+  overlay:
+    subsets:
+    - ports:
+      - (name): "secure"
+        port: 6443  
+
+#if-not-defined
+mutate:
+  overlay:
+    subsets:
+    - ports:
+        +(port): 6443
+
