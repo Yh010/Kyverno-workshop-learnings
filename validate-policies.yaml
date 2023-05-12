@@ -1,0 +1,9 @@
+validate:
+  message: "The label app is required"
+  pattern:
+    spec:
+      template:
+        metadata:
+          labels:
+            app:"?*" 
+            #? : any one , *: zero or more
