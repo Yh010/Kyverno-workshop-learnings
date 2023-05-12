@@ -1,0 +1,13 @@
+generate:
+  kind: NetworkPolicy
+  name: deny-all-traffic
+  data:
+    spec:
+    podSelector:
+      matchLabels: {}
+      matchExpressions: []
+    policyTypes: []
+    metadata:
+      labels:
+        policyname: "default"
+
